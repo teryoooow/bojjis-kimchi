@@ -41,4 +41,12 @@
     <string name="clear_history">Clear history</string>
     <string name="clear_history_confirm">Delete all recorded sales? This cannot be undone.</string>
     <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
+    <string name="delete_txn">Delete transaction</string>
+    <string name="delete_txn_confirm">Delete this sale (₱%1$d)?\n\n%2$s</string>
+    <string name="txn_deleted">Transaction deleted</string>
+    <string name="product_sales">Product sales</string>
+    <string name="kimchi_sales">Kimchi sales</string>
+    <string name="rice_sales">Fried Rice sales</string>
+    <string name="units_fmt">%1$d sold</string>
 </resources>

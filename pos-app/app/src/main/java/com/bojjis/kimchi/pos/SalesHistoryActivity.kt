@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import com.bojjis.kimchi.pos.data.MenuProduct
 import com.bojjis.kimchi.pos.data.Sale
 import com.bojjis.kimchi.pos.data.SaleRepository
 import com.bojjis.kimchi.pos.databinding.ActivitySalesHistoryBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -20,16 +24,18 @@ class SalesHistoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySalesHistoryBinding
     private lateinit var repo: SaleRepository
+    private var adapter: SaleAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySalesHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         repo = SaleRepository(this)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.toolbar.setNavigationOnClickListener { finish() }
 
         binding.btnClear.setOnClickListener {
-            com.google.android.material.dialog.MaterialAlertDialogBuilder(this)
+            MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.clear_history)
                 .setMessage(R.string.clear_history_confirm)
                 .setPositiveButton(R.string.clear) { _, _ ->
@@ -46,9 +52,9 @@ class SalesHistoryActivity : AppCompatActivity() {
         render()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
         finish()
-        return true
     }
 
     private fun render() {
@@ -66,20 +72,58 @@ class SalesHistoryActivity : AppCompatActivity() {
         val todayGcash = today.filter { it.paymentMethod.name == "GCASH" }.sumOf { it.total }
         val allTime = sales.sumOf { it.total }
 
+        val kimchiRevenue = sales.sumOf { sale ->
+            sale.lines.filter { it.product == MenuProduct.KIMCHI }.sumOf { it.lineTotal }
+        }
+        val kimchiQty = sales.sumOf { sale ->
+            sale.lines.filter { it.product == MenuProduct.KIMCHI }.sumOf { it.qty }
+        }
+        val riceRevenue = sales.sumOf { sale ->
+            sale.lines.filter { it.product == MenuProduct.FRIED_RICE }.sumOf { it.lineTotal }
+        }
+        val riceQty = sales.sumOf { sale ->
+            sale.lines.filter { it.product == MenuProduct.FRIED_RICE }.sumOf { it.qty }
+        }
+
         binding.statTodayTotal.text = getString(R.string.total_fmt, todayTotal)
         binding.statTodayCash.text = getString(R.string.total_fmt, todayCash)
         binding.statTodayGcash.text = getString(R.string.total_fmt, todayGcash)
         binding.statAllTime.text = getString(R.string.total_fmt, allTime)
         binding.statCount.text = sales.size.toString()
 
+        binding.statKimchiSales.text = getString(R.string.total_fmt, kimchiRevenue)
+        binding.statKimchiQty.text = getString(R.string.units_fmt, kimchiQty)
+        binding.statRiceSales.text = getString(R.string.total_fmt, riceRevenue)
+        binding.statRiceQty.text = getString(R.string.units_fmt, riceQty)
+
         binding.emptyState.visibility = if (sales.isEmpty()) View.VISIBLE else View.GONE
         binding.salesList.visibility = if (sales.isEmpty()) View.GONE else View.VISIBLE
         binding.salesList.layoutManager = LinearLayoutManager(this)
-        binding.salesList.adapter = SaleAdapter(sales)
+        adapter = SaleAdapter(
+            items = sales,
+            onDelete = { sale -> confirmDelete(sale) }
+        )
+        binding.salesList.adapter = adapter
     }
 
-    class SaleAdapter(private val items: List<Sale>) :
-        RecyclerView.Adapter<SaleAdapter.VH>() {
+    private fun confirmDelete(sale: Sale) {
+        val detail = sale.lines.joinToString("\n") { "- ${it.summary()} ×${it.qty}" }
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.delete_txn)
+            .setMessage(getString(R.string.delete_txn_confirm, sale.total, detail))
+            .setPositiveButton(R.string.delete) { _, _ ->
+                repo.deleteSale(sale.id)
+                Toast.makeText(this, R.string.txn_deleted, Toast.LENGTH_SHORT).show()
+                render()
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
+    }
+
+    class SaleAdapter(
+        private val items: List<Sale>,
+        private val onDelete: (Sale) -> Unit
+    ) : RecyclerView.Adapter<SaleAdapter.VH>() {
 
         private val fmt = SimpleDateFormat("MMM d, yyyy · h:mm a", Locale.getDefault())
 
@@ -114,6 +158,9 @@ class SalesHistoryActivity : AppCompatActivity() {
             root.findViewById<TextView>(R.id.saleExtra).apply {
                 text = extra
                 visibility = if (extra.isEmpty()) View.GONE else View.VISIBLE
+            }
+            root.findViewById<ImageButton>(R.id.btnDeleteSale).setOnClickListener {
+                onDelete(sale)
             }
         }
     }

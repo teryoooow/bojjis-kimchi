@@ -26,6 +26,13 @@ class SaleRepository(context: Context) {
         prefs.edit().putString(KEY_SALES, arr.toString()).apply()
     }
 
+    fun deleteSale(id: Long) {
+        val list = loadSales().filterNot { it.id == id }
+        val arr = JSONArray()
+        list.forEach { arr.put(toJson(it)) }
+        prefs.edit().putString(KEY_SALES, arr.toString()).apply()
+    }
+
     fun clearSales() {
         prefs.edit().remove(KEY_SALES).apply()
     }

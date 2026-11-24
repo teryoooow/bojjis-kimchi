@@ -38,6 +38,16 @@
                 android:textColor="#E63946"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnDeleteSale"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/delete"
+                android:src="@android:drawable/ic_menu_delete"
+                app:tint="#E63946" />
         </LinearLayout>
 
         <TextView
