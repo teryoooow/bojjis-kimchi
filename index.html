@@ -38,7 +38,7 @@
 
     <!-- Item 1 -->
     <article class="card card--kimchi">
-      <img class="card-photo" src="images/kimchi.jpeg" alt="House-made kimchi in a clear container" width="160" height="200" loading="lazy" />
+      <div class="card-emoji" aria-hidden="true">🥬</div>
       <div class="card-body">
         <div class="card-top">
           <h3>Kimchi</h3>
@@ -52,7 +52,7 @@
 
     <!-- Item 2–5: Fried Rice Kimchi with toppings -->
     <article class="card card--rice">
-      <img class="card-photo" src="images/fried-rice-egg.jpeg" alt="Kimchi fried rice topped with egg and seaweed" width="160" height="200" loading="lazy" />
+      <div class="card-emoji" aria-hidden="true">🍳</div>
       <div class="card-body">
         <div class="card-top">
           <h3>Fried Rice Kimchi</h3>
@@ -63,7 +63,7 @@
 
         <ul class="toppings">
           <li class="topping">
-            <img class="topping-thumb" src="images/fried-rice-egg.jpeg" alt="" width="48" height="48" loading="lazy" />
+            <span class="topping-emoji" aria-hidden="true">🥚</span>
             <span class="topping-name">Egg</span>
             <span class="topping-price">₱100</span>
           </li>
@@ -73,12 +73,12 @@
             <span class="topping-price">₱100</span>
           </li>
           <li class="topping">
-            <img class="topping-thumb" src="images/fried-rice-tteokbokki.jpeg" alt="" width="48" height="48" loading="lazy" />
+            <span class="topping-emoji" aria-hidden="true">🍡</span>
             <span class="topping-name">Tteokbokki <small>(Ricecake)</small></span>
             <span class="topping-price">₱100</span>
           </li>
           <li class="topping">
-            <img class="topping-thumb" src="images/fried-rice-sausage.jpeg" alt="" width="48" height="48" loading="lazy" />
+            <span class="topping-emoji" aria-hidden="true">🥖</span>
             <span class="topping-name">Korean Sausage</span>
             <span class="topping-price">₱100</span>
           </li>
@@ -86,6 +86,31 @@
       </div>
     </article>
   </main>
+
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <h2>Photo Gallery</h2>
+      <p class="section-hangul">사진</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="images/kimchi.jpeg" alt="House-made kimchi in a clear container" loading="lazy" width="400" height="300" />
+        <figcaption>Kimchi</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/fried-rice-egg.jpeg" alt="Kimchi fried rice topped with egg and seaweed" loading="lazy" width="400" height="300" />
+        <figcaption>Fried Rice · Egg</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/fried-rice-tteokbokki.jpeg" alt="Kimchi fried rice with tteokbokki rice cakes" loading="lazy" width="400" height="300" />
+        <figcaption>Fried Rice · Tteokbokki</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/fried-rice-sausage.jpeg" alt="Kimchi fried rice with Korean sausage" loading="lazy" width="400" height="300" />
+        <figcaption>Fried Rice · Korean Sausage</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <section class="note">
     <div class="note-inner">
