@@ -57,6 +57,10 @@ class MainActivity : AppCompatActivity() {
                 text = "${product.label}  ₱${product.basePrice}"
                 isCheckable = true
                 isChecked = product == selectedProduct
+                layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
             }
             chip.setOnClickListener {
                 selectedProduct = product
@@ -83,6 +87,10 @@ class MainActivity : AppCompatActivity() {
             val chip = Chip(this).apply {
                 text = name
                 isCheckable = true
+                layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
             }
             chip.setOnClickListener {
                 if (chip.isChecked) selectedToppings.add(name)

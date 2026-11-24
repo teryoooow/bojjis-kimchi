@@ -149,11 +149,15 @@
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipCash"
                     style="@style/PayChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/cash" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipGcash"
                     style="@style/PayChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/gcash" />
             </com.google.android.material.chip.ChipGroup>
 
