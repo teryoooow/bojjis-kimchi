@@ -96,6 +96,13 @@ class SalesHistoryActivity : AppCompatActivity() {
         binding.statRiceSales.text = getString(R.string.total_fmt, riceRevenue)
         binding.statRiceQty.text = getString(R.string.units_fmt, riceQty)
 
+        val allTimeCashSales = sales.filter { it.paymentMethod.name == "CASH" }
+        val allTimeGcashSales = sales.filter { it.paymentMethod.name == "GCASH" }
+        binding.statAllTimeCash.text = getString(R.string.total_fmt, allTimeCashSales.sumOf { it.total })
+        binding.statAllTimeCashCount.text = getString(R.string.txns_fmt, allTimeCashSales.size)
+        binding.statAllTimeGcash.text = getString(R.string.total_fmt, allTimeGcashSales.sumOf { it.total })
+        binding.statAllTimeGcashCount.text = getString(R.string.txns_fmt, allTimeGcashSales.size)
+
         binding.emptyState.visibility = if (sales.isEmpty()) View.VISIBLE else View.GONE
         binding.salesList.visibility = if (sales.isEmpty()) View.GONE else View.VISIBLE
         binding.salesList.layoutManager = LinearLayoutManager(this)

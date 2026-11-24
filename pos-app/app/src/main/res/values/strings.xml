@@ -49,4 +49,8 @@
     <string name="kimchi_sales">Kimchi sales</string>
     <string name="rice_sales">Fried Rice sales</string>
     <string name="units_fmt">%1$d sold</string>
+    <string name="all_time_payments">All-time payments</string>
+    <string name="all_time_cash">Cash on hand</string>
+    <string name="all_time_gcash">In GCash</string>
+    <string name="txns_fmt">%1$d txn(s)</string>
 </resources>
