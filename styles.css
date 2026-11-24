@@ -87,43 +87,17 @@ img {
   margin-bottom: 0.5rem;
 }
 
-.taegeuk {
-  width: 72px;
-  height: 72px;
+.hero-logo {
+  display: block;
+  width: min(320px, 80vw);
+  height: auto;
   margin: 0 auto 1rem;
-  border-radius: 50%;
-  background:
-    linear-gradient(to bottom, var(--red) 50%, var(--white) 50%);
+  border-radius: 28px;
   border: 4px solid var(--ink);
-  position: relative;
   box-shadow: var(--shadow);
+  background: var(--cream-2);
+  object-fit: contain;
   animation: float 3.5s ease-in-out infinite;
-}
-
-.taegeuk::before,
-.taegeuk::after {
-  content: "";
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 4px solid var(--ink);
-}
-
-.taegeuk::before {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle at 50% 50%, var(--white) 40%, var(--red) 42%);
-  border-top-color: transparent;
-}
-
-.taegeuk::after {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle at 50% 50%, var(--red) 40%, var(--white) 42%);
-  border-bottom-color: transparent;
 }
 
 @keyframes float {
