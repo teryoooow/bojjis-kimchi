@@ -14,8 +14,11 @@ A cute, colorful, responsive Korean-themed online menu.
 
 ## Live site
 
-Hosted on **GitHub Pages**: open the repository **Settings → Pages** for the published URL  
-(or visit `https://<username>.github.io/<repo>/`).
+Hosted on **GitHub Pages**: https://teryoooow.github.io/bojjis-kimchi/
+
+## Facebook
+
+https://www.facebook.com/share/19oVDJXUGh/?mibextid=wwXIfr
 
 ## Local preview
 
