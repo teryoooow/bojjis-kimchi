@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bojji\'s POS</string>
+    <string name="pos_subtitle">Korean eats · sales tracker</string>
+    <string name="history">Sales History</string>
+    <string name="products">Products</string>
+    <string name="toppings">Toppings</string>
+    <string name="toppings_hint_rice">1st topping included in ₱100 · extra toppings ₱25 each</string>
+    <string name="toppings_hint_kimchi">Optional toppings ₱25 each</string>
+    <string name="qty">Qty</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="cart">Cart</string>
+    <string name="cart_empty">Cart is empty — add something tasty!</string>
+    <string name="total_zero">Total: ₱0</string>
+    <string name="total_fmt">₱%1$d</string>
+    <string name="payment_method">Payment method</string>
+    <string name="cash">Cash</string>
+    <string name="gcash">GCash</string>
+    <string name="cash_tendered">Cash tendered</string>
+    <string name="cash_hint">Amount received</string>
+    <string name="checkout">Checkout</string>
+    <string name="view_sales_history">View sales history</string>
+    <string name="pick_topping">Pick at least one topping for fried rice</string>
+    <string name="added">Added to cart</string>
+    <string name="line_meta">×%1$d  ·  ₱%2$d each  ·  ₱%3$d</string>
+    <string name="remove">Remove</string>
+    <string name="insufficient_cash">Cash tendered is less than total</string>
+    <string name="cash_tendered_label">Cash tendered</string>
+    <string name="confirm">Confirm</string>
+    <string name="sale_complete">Sale complete!</string>
+    <string name="sale_done">Payment recorded via GCash.</string>
+    <string name="sale_done_change">Payment recorded. Change due: ₱%1$d</string>
+    <string name="tendered_fmt">Tendered ₱%1$d</string>
+    <string name="change_fmt">Change ₱%1$d</string>
+    <string name="today">Today</string>
+    <string name="today_total">Today total</string>
+    <string name="all_time">All-time sales</string>
+    <string name="total_txns">Transactions</string>
+    <string name="transactions">Transactions</string>
+    <string name="no_sales">No sales yet</string>
+    <string name="clear_history">Clear history</string>
+    <string name="clear_history_confirm">Delete all recorded sales? This cannot be undone.</string>
+    <string name="clear">Clear</string>
+</resources>
