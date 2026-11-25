@@ -205,8 +205,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="24dp"
                 android:text="@string/view_sales_history"
+                android:textColor="#3D2C2E"
+                app:cornerRadius="16dp"
+                app:strokeColor="#3D2C2E"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExpenses"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/view_expenses"
                 android:textColor="#3D2C2E"
                 app:cornerRadius="16dp"
                 app:strokeColor="#3D2C2E"

@@ -135,6 +135,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnHistory.setOnClickListener {
             startActivity(Intent(this, SalesHistoryActivity::class.java))
         }
+        binding.btnExpenses.setOnClickListener {
+            startActivity(Intent(this, ExpensesActivity::class.java))
+        }
     }
 
     private fun addToCart() {

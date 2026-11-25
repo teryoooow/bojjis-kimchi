@@ -20,5 +20,9 @@
             android:name=".SalesHistoryActivity"
             android:exported="false"
             android:label="@string/history" />
+        <activity
+            android:name=".ExpensesActivity"
+            android:exported="false"
+            android:label="@string/expenses" />
     </application>
 </manifest>

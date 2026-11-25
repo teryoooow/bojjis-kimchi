@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import com.bojjis.kimchi.pos.data.ExpenseRepository
 import com.bojjis.kimchi.pos.data.MenuProduct
 import com.bojjis.kimchi.pos.data.Sale
 import com.bojjis.kimchi.pos.data.SaleRepository
@@ -102,6 +103,15 @@ class SalesHistoryActivity : AppCompatActivity() {
         binding.statAllTimeCashCount.text = getString(R.string.txns_fmt, allTimeCashSales.size)
         binding.statAllTimeGcash.text = getString(R.string.total_fmt, allTimeGcashSales.sumOf { it.total })
         binding.statAllTimeGcashCount.text = getString(R.string.txns_fmt, allTimeGcashSales.size)
+
+        val totalExpenses = ExpenseRepository(this).loadExpenses().sumOf { it.amount }
+        val net = allTime - totalExpenses
+        binding.statProfitSales.text = getString(R.string.total_fmt, allTime)
+        binding.statProfitExpenses.text = getString(R.string.total_fmt, totalExpenses)
+        binding.statNetProfit.text = getString(R.string.total_fmt, net)
+        binding.statNetProfit.setTextColor(
+            getColor(if (net >= 0) R.color.green else R.color.red)
+        )
 
         binding.emptyState.visibility = if (sales.isEmpty()) View.VISIBLE else View.GONE
         binding.salesList.visibility = if (sales.isEmpty()) View.GONE else View.VISIBLE
