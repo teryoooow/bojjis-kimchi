@@ -198,11 +198,21 @@
     .card-photo {
       width: 18mm;
       height: 18mm;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5pt solid #3d2c2e;
+      min-width: 18mm;
+      min-height: 18mm;
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1.5pt solid #2d2422;
       flex-shrink: 0;
-      background: #fff1dc;
+      background: #fef3c7;
+    }
+
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .topping-photo {
@@ -487,7 +497,9 @@
 
       <section class="menu">
         <article class="card card-kimchi">
-          <img class="card-photo" src="images/kimchi.jpeg" alt="Kimchi" />
+          <div class="card-photo">
+            <img src="images/kimchi.jpeg" alt="Kimchi" />
+          </div>
           <div class="card-body">
             <div class="card-top">
               <h3>Kimchi</h3>
