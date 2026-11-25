@@ -195,6 +195,26 @@
     .card-kimchi .card-icon { background: #d4f5ec; }
     .card-rice .card-icon { background: #fff3c4; }
 
+    .card-photo {
+      width: 18mm;
+      height: 18mm;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.5pt solid #3d2c2e;
+      flex-shrink: 0;
+      background: #fff1dc;
+    }
+
+    .topping-photo {
+      width: 7mm;
+      height: 7mm;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.2pt solid #3d2c2e;
+      flex-shrink: 0;
+      background: #fff1dc;
+    }
+
     .card-body { flex: 1; min-width: 0; }
 
     .card-top {
@@ -316,6 +336,11 @@
       margin-bottom: 3.5mm;
     }
 
+    .gallery-grid--5 {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2mm;
+    }
+
     .gallery-item {
       background: #ffffff;
       border: 2pt solid #3d2c2e;
@@ -327,12 +352,20 @@
 
     .gallery-item img {
       width: 100%;
-      height: 28mm;
+      height: 24mm;
       object-fit: cover;
       border-radius: 2.5mm;
       border: 1.4pt solid #3d2c2e;
       background: #fff1dc;
       display: block;
+    }
+
+    .gallery-grid--5 .gallery-item img {
+      height: 22mm;
+    }
+
+    .gallery-grid--5 .gallery-item figcaption {
+      font-size: 8.5pt;
     }
 
     .gallery-item figcaption {
@@ -454,7 +487,7 @@
 
       <section class="menu">
         <article class="card card-kimchi">
-          <div class="card-icon" aria-hidden="true">🥬</div>
+          <img class="card-photo" src="images/kimchi.jpeg" alt="Kimchi" />
           <div class="card-body">
             <div class="card-top">
               <h3>Kimchi</h3>
@@ -477,22 +510,22 @@
             <p class="desc">Wok-tossed kimchi fried rice — pick your favorite topping!</p>
             <ul class="toppings">
               <li class="topping">
-                <span class="topping-emoji" aria-hidden="true">🥚</span>
+                <img class="topping-photo" src="images/Egg.jpeg" alt="" />
                 <span class="topping-name">Egg</span>
                 <span class="topping-price">₱100</span>
               </li>
               <li class="topping">
-                <span class="topping-emoji" aria-hidden="true">🐟</span>
+                <img class="topping-photo" src="images/Odeng.jpeg" alt="" />
                 <span class="topping-name">Odeng <small>(Fishcake)</small></span>
                 <span class="topping-price">₱100</span>
               </li>
               <li class="topping">
-                <span class="topping-emoji" aria-hidden="true">🍡</span>
+                <img class="topping-photo" src="images/Tteokbokki.jpeg" alt="" />
                 <span class="topping-name">Tteokbokki <small>(Ricecake)</small></span>
                 <span class="topping-price">₱100</span>
               </li>
               <li class="topping">
-                <span class="topping-emoji" aria-hidden="true">🥖</span>
+                <img class="topping-photo" src="images/Sausage.jpeg" alt="" />
                 <span class="topping-name">Korean Sausage</span>
                 <span class="topping-price">₱100</span>
               </li>
@@ -506,22 +539,26 @@
         <p class="sub">사진</p>
       </div>
 
-      <section class="gallery-grid">
+      <section class="gallery-grid gallery-grid--5">
         <figure class="gallery-item">
           <img src="images/kimchi.jpeg" alt="Kimchi" />
           <figcaption>Kimchi</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/fried-rice-egg.jpeg" alt="Fried rice with egg" />
+          <img src="images/Egg.jpeg" alt="Fried rice with egg" />
           <figcaption>Egg</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/fried-rice-tteokbokki.jpeg" alt="Fried rice with tteokbokki" />
+          <img src="images/Odeng.jpeg" alt="Fried rice with odeng" />
+          <figcaption>Odeng</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/Tteokbokki.jpeg" alt="Fried rice with tteokbokki" />
           <figcaption>Tteokbokki</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/fried-rice-sausage.jpeg" alt="Fried rice with Korean sausage" />
-          <figcaption>Korean Sausage</figcaption>
+          <img src="images/Sausage.jpeg" alt="Fried rice with Korean sausage" />
+          <figcaption>Sausage</figcaption>
         </figure>
       </section>
 

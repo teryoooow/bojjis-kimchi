@@ -232,6 +232,16 @@ img {
   flex-shrink: 0;
 }
 
+.card-photo {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  flex-shrink: 0;
+  background: var(--cream-2);
+}
+
 .card--kimchi .card-emoji { background: var(--mint-soft); }
 .card--rice .card-emoji { background: var(--yellow-soft); }
 
@@ -335,6 +345,16 @@ img {
 .topping-emoji {
   font-size: 1.5rem;
   line-height: 1;
+}
+
+.topping-photo {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2.5px solid var(--ink);
+  flex-shrink: 0;
+  background: var(--white);
 }
 
 .topping-name {
@@ -518,9 +538,22 @@ img {
     gap: 1.5rem;
   }
 
+  .card-photo {
+    width: 84px;
+    height: 84px;
+  }
+
   .card-emoji {
     width: 84px;
     height: 84px;
+  }
+}
+
+/* 5-up gallery on wide screens */
+@media (min-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
   }
 }
 
