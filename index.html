@@ -3,139 +3,306 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bojji's Kimchi — cute Korean menu with kimchi and fried rice kimchi toppings." />
-  <title>Bojji's Kimchi 🥬</title>
+  <meta name="description" content="Bojji's Kimchi — Authentic Korean Kimchi. Handmade · Traditional Recipe. Kimchi and kimchi fried rice with toppings." />
+  <title>Bojji's Kimchi — Authentic Korean Kimchi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 </head>
 <body>
-  <div class="bg-dots" aria-hidden="true"></div>
+  <div class="page-frame" aria-hidden="true">
+    <span class="corner corner--tl"></span>
+    <span class="corner corner--tr"></span>
+    <span class="corner corner--bl"></span>
+    <span class="corner corner--br"></span>
+  </div>
 
-  <header class="hero">
-    <div class="hero-deco hero-deco--left" aria-hidden="true">✿</div>
-    <div class="hero-deco hero-deco--right" aria-hidden="true">✿</div>
-
-    <p class="hero-hangul" aria-hidden="true">안녕하세요</p>
-    <img class="hero-logo" src="logo.jpeg" alt="Bojji's Authentic Korean Kimchi logo" width="320" height="175" />
-    <h1 class="hero-title">Bojji's <span>Kimchi</span></h1>
-    <p class="hero-sub">맛있어요 · cute Korean eats · made with ♥</p>
-
-    <div class="hero-badges">
-      <span class="badge badge--pink">🥬 fresh</span>
-      <span class="badge badge--mint"> spicy</span>
-      <span class="badge badge--yellow">✨ homemade</span>
-    </div>
-  </header>
-
-  <main class="menu">
-    <div class="section-head">
-      <h2>Our Menu</h2>
-      <p class="section-hangul">메뉴</p>
-    </div>
-
-    <!-- Item 1 -->
-    <article class="card card--kimchi">
-      <div class="card-photo" aria-hidden="true">
-        <img src="images/kimchi.jpeg" alt="" loading="lazy" width="400" height="300" />
+  <div class="sheet">
+    <!-- ===== Top header bar ===== -->
+    <header class="top-bar">
+      <div class="top-bar__side top-bar__side--left">
+        <p class="tagline">AUTHENTIC KOREAN KIMCHI</p>
       </div>
-      <div class="card-body">
-        <div class="card-top">
-          <h3>Kimchi</h3>
-          <span class="price">₱200</span>
+
+      <div class="top-bar__logo">
+        <img src="logo.jpeg" alt="Bojji's Kimchi logo — cheerful character in traditional attire holding a wooden spoon and kimchi jar" width="280" height="153" />
+        <h1 class="brand">Bojji's <span>Kimchi</span></h1>
+      </div>
+
+      <div class="top-bar__side top-bar__side--right">
+        <p class="tagline">HANDMADE • TRADITIONAL RECIPE</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== Section title ===== -->
+      <div class="section-head">
+        <span class="chili" aria-hidden="true">🌶️</span>
+        <h2 class="section-title">OUR MENU</h2>
+        <span class="section-hangul" aria-hidden="true">메뉴</span>
+        <span class="chili chili--flip" aria-hidden="true">🌶️</span>
+      </div>
+
+      <!-- ===== 2-column menu grid ===== -->
+      <div class="menu-grid">
+        <!-- Left: Kimchi -->
+        <article class="menu-card menu-card--kimchi">
+          <div class="menu-card__media">
+            <div class="photo-ring">
+              <img src="images/kimchi.jpeg" alt="House-made kimchi in a clear deli container" loading="lazy" width="400" height="400" />
+            </div>
+            <span class="badge-best">BEST SELLER</span>
+          </div>
+
+          <div class="menu-card__body">
+            <div class="menu-card__title-row">
+              <h3 class="menu-card__title">Kimchi <span class="hangul">(김치)</span></h3>
+              <span class="price-pill">₱200</span>
+            </div>
+            <p class="menu-card__desc">Crispy, tangy &amp; perfectly spicy house-made kimchi. The star of every table!</p>
+          </div>
+        </article>
+
+        <!-- Right: Fried Rice Kimchi -->
+        <article class="menu-card menu-card--rice">
+          <div class="menu-card__body">
+            <div class="menu-card__title-row">
+              <h3 class="menu-card__title">Fried Rice Kimchi <span class="hangul">(김치볶음밥)</span></h3>
+              <span class="price-pill price-pill--sm">₱100 each</span>
+            </div>
+            <p class="menu-card__desc">Wok-tossed kimchi fried rice — pick your favorite topping!</p>
+
+            <!-- 2×2 topping grid -->
+            <ul class="topping-grid">
+              <li class="topping topping--egg">
+                <img class="topping__photo" src="images/Egg.jpeg" alt="Kimchi fried rice with egg" loading="lazy" width="80" height="80" />
+                <div class="topping__meta">
+                  <span class="topping__name">Egg</span>
+                  <span class="topping__price">₱100</span>
+                </div>
+              </li>
+              <li class="topping topping--odeng">
+                <img class="topping__photo" src="images/Odeng.jpeg" alt="Kimchi fried rice with odeng fishcake" loading="lazy" width="80" height="80" />
+                <div class="topping__meta">
+                  <span class="topping__name">Odeng <small>(Fishcake)</small></span>
+                  <span class="topping__price">₱100</span>
+                </div>
+              </li>
+              <li class="topping topping--tteok">
+                <img class="topping__photo" src="images/Tteokbokki.jpeg" alt="Kimchi fried rice with tteokbokki ricecake" loading="lazy" width="80" height="80" />
+                <div class="topping__meta">
+                  <span class="topping__name">Tteokbokki <small>(Ricecake)</small></span>
+                  <span class="topping__price">₱100</span>
+                </div>
+              </li>
+              <li class="topping topping--sausage">
+                <img class="topping__photo" src="images/Sausage.jpeg" alt="Kimchi fried rice with Korean sausage" loading="lazy" width="80" height="80" />
+                <div class="topping__meta">
+                  <span class="topping__name">Korean Sausage</span>
+                  <span class="topping__price">₱100</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== Additional toppings callout ===== -->
+      <div class="callout" role="note">
+        <span class="callout__mark" aria-hidden="true">+</span>
+        <p class="callout__text">ADD ₱25 FOR ADDITIONAL TOPPINGS!</p>
+        <span class="callout__mark" aria-hidden="true">+</span>
+      </div>
+
+      <!-- ===== Interactive order builder ===== -->
+      <section class="order" id="order" aria-labelledby="order-heading">
+        <div class="order__head">
+          <h2 id="order-heading" class="order__title">Quick Order</h2>
+          <p class="order__sub">Build your order — copy it or send via Messenger / SMS.</p>
         </div>
-        <p class="card-hangul">김치</p>
-        <p class="card-desc">Crispy, tangy &amp; perfectly spicy house-made kimchi. The star of every table!</p>
-        <span class="tag tag--red">best seller</span>
-      </div>
-    </article>
 
-    <!-- Item 2–5: Fried Rice Kimchi with toppings -->
-    <article class="card card--rice">
-      <div class="card-emoji" aria-hidden="true">🍳</div>
-      <div class="card-body">
-        <div class="card-top">
-          <h3>Fried Rice Kimchi</h3>
-          <span class="price">₱100 <small>each</small></span>
+        <div class="order__grid">
+          <div class="order__pick">
+            <p class="order__label">1. Pick a dish</p>
+            <div class="chip-row" role="radiogroup" aria-label="Dish">
+              <button type="button" class="chip chip--dish is-active" data-dish="Kimchi" data-price="200" aria-pressed="true">Kimchi · ₱200</button>
+              <button type="button" class="chip chip--dish" data-dish="Fried Rice — Egg" data-price="100" aria-pressed="false">Fried Rice · Egg · ₱100</button>
+              <button type="button" class="chip chip--dish" data-dish="Fried Rice — Odeng" data-price="100" aria-pressed="false">Fried Rice · Odeng · ₱100</button>
+              <button type="button" class="chip chip--dish" data-dish="Fried Rice — Tteokbokki" data-price="100" aria-pressed="false">Fried Rice · Tteokbokki · ₱100</button>
+              <button type="button" class="chip chip--dish" data-dish="Fried Rice — Korean Sausage" data-price="100" aria-pressed="false">Fried Rice · Sausage · ₱100</button>
+            </div>
+          </div>
+
+          <div class="order__extras">
+            <p class="order__label">2. Extra toppings <span class="order__hint">(+₱25 each)</span></p>
+            <div class="chip-row">
+              <label class="chip chip--extra chip--egg"><input type="checkbox" data-extra="Egg" /> Egg</label>
+              <label class="chip chip--extra chip--odeng"><input type="checkbox" data-extra="Odeng" /> Odeng</label>
+              <label class="chip chip--extra chip--tteok"><input type="checkbox" data-extra="Tteokbokki" /> Tteokbokki</label>
+              <label class="chip chip--extra chip--sausage"><input type="checkbox" data-extra="Korean Sausage" /> Korean Sausage</label>
+            </div>
+          </div>
+
+          <div class="order__qty">
+            <p class="order__label">3. Quantity</p>
+            <div class="qty">
+              <button type="button" class="qty__btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+              <input type="number" id="qty" class="qty__input" value="1" min="1" max="99" inputmode="numeric" aria-label="Quantity" />
+              <button type="button" class="qty__btn" id="qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
         </div>
-        <p class="card-hangul">김치볶음밥</p>
-        <p class="card-desc">Wok-tossed kimchi fried rice — pick your favorite topping!</p>
 
-        <ul class="toppings">
-          <li class="topping">
-            <img class="topping-photo" src="images/Egg.jpeg" alt="" loading="lazy" width="80" height="80" />
-            <span class="topping-name">Egg</span>
-            <span class="topping-price">₱100</span>
-          </li>
-          <li class="topping">
-            <img class="topping-photo" src="images/Odeng.jpeg" alt="" loading="lazy" width="80" height="80" />
-            <span class="topping-name">Odeng <small>(Fishcake)</small></span>
-            <span class="topping-price">₱100</span>
-          </li>
-          <li class="topping">
-            <img class="topping-photo" src="images/Tteokbokki.jpeg" alt="" loading="lazy" width="80" height="80" />
-            <span class="topping-name">Tteokbokki <small>(Ricecake)</small></span>
-            <span class="topping-price">₱100</span>
-          </li>
-          <li class="topping">
-            <img class="topping-photo" src="images/Sausage.jpeg" alt="" loading="lazy" width="80" height="80" />
-            <span class="topping-name">Korean Sausage</span>
-            <span class="topping-price">₱100</span>
-          </li>
-        </ul>
+        <div class="order__summary">
+          <div class="order__lines" id="summary-lines" aria-live="polite"></div>
+          <p class="order__total">Total: <strong id="summary-total">₱200</strong></p>
+        </div>
+
+        <div class="order__actions">
+          <button type="button" class="btn btn--copy" id="btn-copy">Copy order</button>
+          <a class="btn btn--msg" id="btn-msg" href="https://m.me/bojikimchi" target="_blank" rel="noopener noreferrer">Send via Messenger</a>
+          <a class="btn btn--sms" id="btn-sms" href="sms:09614724006">Text SMS</a>
+        </div>
+        <p class="order__toast" id="order-toast" hidden>Copied to clipboard!</p>
+      </section>
+    </main>
+
+    <!-- ===== Footer / order channels ===== -->
+    <footer class="footer">
+      <div class="footer__channels">
+        <a class="channel channel--fb" href="https://www.facebook.com/bojikimchi/" target="_blank" rel="noopener noreferrer">
+          <span class="channel__icon" aria-hidden="true">f</span>
+          <span class="channel__text">
+            <strong>Facebook</strong>
+            <span>facebook.com/bojikimchi</span>
+          </span>
+        </a>
+        <a class="channel channel--msg" href="https://m.me/bojikimchi" target="_blank" rel="noopener noreferrer">
+          <span class="channel__icon" aria-hidden="true">💬</span>
+          <span class="channel__text">
+            <strong>Messenger</strong>
+            <span>Msg us: m.me/bojikimchi</span>
+          </span>
+        </a>
+        <a class="channel channel--sms" href="sms:09614724006">
+          <span class="channel__icon" aria-hidden="true">✉️</span>
+          <span class="channel__text">
+            <strong>SMS</strong>
+            <span>SMS: 09614724006</span>
+          </span>
+        </a>
       </div>
-    </article>
-  </main>
-
-  <section class="gallery" id="gallery">
-    <div class="section-head">
-      <h2>Photo Gallery</h2>
-      <p class="section-hangul">사진</p>
-    </div>
-    <div class="gallery-grid">
-      <figure class="gallery-item">
-        <img src="images/kimchi.jpeg" alt="House-made kimchi" loading="lazy" width="400" height="300" />
-        <figcaption>Kimchi</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="images/Egg.jpeg" alt="Kimchi fried rice with egg topping" loading="lazy" width="400" height="300" />
-        <figcaption>Fried Rice · Egg</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="images/Odeng.jpeg" alt="Kimchi fried rice with odeng fishcake" loading="lazy" width="400" height="300" />
-        <figcaption>Fried Rice · Odeng</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="images/Tteokbokki.jpeg" alt="Kimchi fried rice with tteokbokki rice cakes" loading="lazy" width="400" height="300" />
-        <figcaption>Fried Rice · Tteokbokki</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="images/Sausage.jpeg" alt="Kimchi fried rice with Korean sausage" loading="lazy" width="400" height="300" />
-        <figcaption>Fried Rice · Korean Sausage</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="note">
-    <div class="note-inner">
-      <span class="note-emoji" aria-hidden="true">💖</span>
-      <p>Try combining toppings — every combo is <strong>₱100 only</strong>! Limited menu for now, more coming soon~</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p class="footer-hangul">감사합니다</p>
-    <a class="fb-link" href="https://www.facebook.com/share/19oVDJXUGh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
-      <span class="fb-icon" aria-hidden="true">f</span>
-      Follow us on Facebook
-    </a>
-    <p>© <span id="year"></span> Bojji's Kimchi · Made with ♥ &amp; lots of spice</p>
-  </footer>
+      <p class="footer__copy">© <span id="year"></span> Bojji's Kimchi · Handmade with ♥</p>
+    </footer>
+  </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const EXTRA_PRICE = 25;
+    const dishChips = document.querySelectorAll(".chip--dish");
+    const extraChecks = document.querySelectorAll(".chip--extra input");
+    const qtyInput = document.getElementById("qty");
+    const summaryLines = document.getElementById("summary-lines");
+    const summaryTotal = document.getElementById("summary-total");
+    const btnCopy = document.getElementById("btn-copy");
+    const btnMsg = document.getElementById("btn-msg");
+    const btnSms = document.getElementById("btn-sms");
+    const toast = document.getElementById("order-toast");
+
+    let dish = { name: "Kimchi", price: 200 };
+
+    function php(n) {
+      return "₱" + n.toLocaleString("en-PH");
+    }
+
+    function selectedExtras() {
+      return Array.from(extraChecks)
+        .filter((c) => c.checked)
+        .map((c) => c.dataset.extra);
+    }
+
+    function orderText() {
+      const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+      const extras = selectedExtras();
+      const lines = [];
+      lines.push("Bojji's Kimchi order");
+      lines.push(`${qty}× ${dish.name} — ${php(dish.price * qty)}`);
+      if (extras.length) {
+        const extraTotal = EXTRA_PRICE * extras.length * qty;
+        lines.push(`Extra toppings (${extras.join(", ")}) — ${php(extraTotal)}`);
+      }
+      const total = dish.price * qty + EXTRA_PRICE * extras.length * qty;
+      lines.push(`Total: ${php(total)}`);
+      lines.push("Thank you! 🌶️");
+      return lines.join("\n");
+    }
+
+    function render() {
+      const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+      if (String(qty) !== qtyInput.value) qtyInput.value = qty;
+      const extras = selectedExtras();
+      const extraTotal = EXTRA_PRICE * extras.length * qty;
+      const total = dish.price * qty + extraTotal;
+
+      const parts = [
+        `<div class="sum-line"><span>${qty}× ${dish.name}</span><span>${php(dish.price * qty)}</span></div>`,
+      ];
+      if (extras.length) {
+        parts.push(
+          `<div class="sum-line sum-line--muted"><span>+ ${extras.join(", ")} (${php(EXTRA_PRICE)} each${qty > 1 ? " × " + qty : ""})</span><span>${php(extraTotal)}</span></div>`
+        );
+      }
+      summaryLines.innerHTML = parts.join("");
+      summaryTotal.textContent = php(total);
+
+      const text = encodeURIComponent(orderText());
+      btnMsg.href = "https://m.me/bojikimchi?text=" + text;
+      btnSms.href = "sms:09614724006?body=" + text;
+    }
+
+    dishChips.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        dishChips.forEach((b) => {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-pressed", "true");
+        dish = { name: btn.dataset.dish, price: Number(btn.dataset.price) };
+        render();
+      });
+    });
+
+    extraChecks.forEach((c) => c.addEventListener("change", render));
+    qtyInput.addEventListener("input", render);
+    document.getElementById("qty-minus").addEventListener("click", () => {
+      qtyInput.value = Math.max(1, (parseInt(qtyInput.value, 10) || 1) - 1);
+      render();
+    });
+    document.getElementById("qty-plus").addEventListener("click", () => {
+      qtyInput.value = Math.min(99, (parseInt(qtyInput.value, 10) || 1) + 1);
+      render();
+    });
+
+    btnCopy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(orderText());
+      } catch {
+        const ta = document.createElement("textarea");
+        ta.value = orderText();
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+      toast.hidden = false;
+      setTimeout(() => (toast.hidden = true), 1800);
+    });
+
+    render();
   </script>
 </body>
 </html>

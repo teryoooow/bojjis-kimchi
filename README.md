@@ -1,6 +1,8 @@
-# Bojji's Kimchi 🥬
+# Bojji's Kimchi 🌶️
 
-A cute, colorful, responsive Korean-themed online menu for **Bojji's Authentic Korean Kimchi**.
+Authentic Korean kimchi & kimchi fried rice — warm artisanal online menu.
+
+**Taglines:** AUTHENTIC KOREAN KIMCHI · HANDMADE • TRADITIONAL RECIPE
 
 ## Live site
 
@@ -10,21 +12,27 @@ A cute, colorful, responsive Korean-themed online menu for **Bojji's Authentic K
 
 | Item | Price |
 |------|-------|
-| Kimchi | ₱200 |
-| Fried Rice Kimchi — Egg | ₱100 |
+| Kimchi (김치) | ₱200 |
+| Fried Rice Kimchi (김치볶음밥) — Egg | ₱100 |
 | Fried Rice Kimchi — Odeng (Fishcake) | ₱100 |
 | Fried Rice Kimchi — Tteokbokki (Ricecake) | ₱100 |
 | Fried Rice Kimchi — Korean Sausage | ₱100 |
 
-> 1st topping is included with Fried Rice Kimchi. Extra toppings are ₱25 each.
+> Additional toppings: **+₱25 each**
 
 ## What's included
 
-- **`index.html` + `styles.css`** — mobile-first landing page with hero, menu cards, photo gallery, and Facebook link
+- **`index.html` + `styles.css`** — crimson/cream/terracotta menu sheet with flanking taglines, 2-column cards, +₱25 callout, and interactive Quick Order (copy / Messenger / SMS)
 - **`menu-print.html`** — A4 single-page print menu
 - **`Bojjis-Kimchi-Menu.pdf`** / **`Bojjis-Kimchi-Menu-Gallery.pdf`** — ready-to-print PDFs
-- **`images/`** — food photos (kimchi + fried rice toppings)
-- **`logo.jpeg`** — brand logo (also used as favicon)
+- **`images/`** — food photos
+- **`logo.jpeg`** — brand logo
+
+## Order channels
+
+- **Facebook:** https://www.facebook.com/bojikimchi/
+- **Messenger:** https://m.me/bojikimchi
+- **SMS:** 09614724006
 
 ## Local preview
 
@@ -34,23 +42,15 @@ Open `index.html` in a browser, or run:
 npx serve .
 ```
 
-## Print menu
-
-Open `menu-print.html` and print to PDF (A4), or use the bundled PDFs.
-
-## Facebook
-
-https://www.facebook.com/share/19oVDJXUGh/?mibextid=wwXIfr
-
 ## POS app
 
-Sales / expense tracking Android app lives in a **separate repo**:
+Sales / expense tracking Android app:
 
 **[teryoooow/bojjis-kimchi-pos](https://github.com/teryoooow/bojjis-kimchi-pos)**
 
 ## Stack
 
-- Plain HTML + CSS (no build step)
-- Google Fonts: Gaegu & Noto Sans KR
-- Fully responsive (mobile-first)
+- Plain HTML + CSS + vanilla JS (no build step)
+- Google Fonts: Archivo Black & Noto Sans KR
+- Fully responsive
 - Hosted on GitHub Pages
