@@ -1,26 +1,22 @@
-/* ===== Tokens — Bojji's Kimchi brand ===== */
+/* ===== Tokens — Bojji's Kimchi tarpaulin theme ===== */
 :root {
-  --crimson: #a6261e;
-  --crimson-deep: #8c2d19;
-  --crimson-bright: #b8291e;
-  --cream: #fbf5eb;
-  --cream-bright: #fffdf9;
-  --terracotta: #c86d3b;
-  --terracotta-deep: #8c2d19;
-  --ink: #26211f;
-  --ink-soft: #332c2a;
+  --crimson: #9e241c;
+  --crimson-mid: #b83222;
+  --crimson-deep: #8c1f18;
+  --gold: #d98a4e;
+  --gold-soft: #e5a96c;
+  --cream: #fbf4e8;
+  --cream-card: #fcf7ee;
+  --ink: #241f1d;
+  --ink-soft: #3a322e;
   --ink-muted: #6b5e58;
 
-  --egg: #f9f0b8;
-  --egg-deep: #fff4b8;
-  --odeng: #bce3d3;
-  --odeng-deep: #c8e6d8;
-  --tteok: #f7c5d0;
-  --tteok-deep: #fad2dc;
-  --sausage: #dcd2f2;
-  --sausage-deep: #e4dcf7;
+  --egg: #f7eeb2;
+  --odeng: #b5dfce;
+  --tteok: #f5c2ce;
+  --sausage: #d9cef0;
 
-  --border: 2.5px solid var(--ink);
+  --border: 3px solid var(--ink);
   --shadow: 4px 4px 0 var(--ink);
   --shadow-lg: 6px 6px 0 var(--ink);
   --radius: 22px;
@@ -44,15 +40,24 @@ html {
   max-width: 100vw;
 }
 
+/*
+  Outer canvas: crimson/terracotta with warm-gold Korean lattice/scrollwork.
+  Pattern is a low-opacity SVG tile (dancheong-inspired geometry) over a
+  deep red gradient — festive tarpaulin, not flat brown.
+*/
 body {
   font-family: var(--font-body);
   color: var(--ink);
   min-height: 100vh;
   line-height: 1.55;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(140, 45, 25, 0.18), transparent 42%),
-    radial-gradient(circle at 100% 100%, rgba(140, 45, 25, 0.22), transparent 45%),
-    linear-gradient(160deg, var(--terracotta) 0%, var(--terracotta-deep) 100%);
+  background-color: #9e241c;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23D98A4E' stroke-width='1.6' opacity='0.28'%3E%3Cpath d='M0 30h120M0 60h120M0 90h120M30 0v120M60 0v120M90 0v120'/%3E%3Cpath d='M0 0l30 30M120 0L90 30M0 120l30-30M120 120L90 90'/%3E%3Ccircle cx='60' cy='60' r='18'/%3E%3Cpath d='M60 36l8 12 14 2-10 10 2 14-14-7-14 7 2-14-10-10 14-2z'/%3E%3Cpath d='M15 15h20v20H15zM85 15h20v20H85zM15 85h20v20H15zM85 85h20v20H85z'/%3E%3Cpath d='M20 20h10v10H20zM90 20h10v10H90zM20 90h10v10H20zM90 90h10v10H90z'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 20% 10%, rgba(229, 169, 108, 0.35), transparent 45%),
+    radial-gradient(ellipse at 80% 90%, rgba(140, 31, 24, 0.55), transparent 50%),
+    linear-gradient(165deg, #b83222 0%, #9e241c 45%, #8c1f18 100%);
+  background-size: 120px 120px, auto, auto, auto;
+  background-attachment: fixed;
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
@@ -73,47 +78,6 @@ a {
   color: inherit;
 }
 
-/* ===== Outer frame corners (Korean lattice motif) ===== */
-.page-frame {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-
-.corner {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  border: 3px solid rgba(255, 253, 249, 0.45);
-}
-
-.corner::before,
-.corner::after {
-  content: "";
-  position: absolute;
-  background: rgba(255, 253, 249, 0.45);
-}
-
-.corner::before {
-  width: 100%;
-  height: 3px;
-  top: 10px;
-  left: 0;
-}
-
-.corner::after {
-  width: 3px;
-  height: 100%;
-  top: 0;
-  left: 10px;
-}
-
-.corner--tl { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
-.corner--tr { top: 14px; right: 14px; border-left: 0; border-bottom: 0; transform: scaleX(-1); }
-.corner--bl { bottom: 14px; left: 14px; border-right: 0; border-top: 0; transform: scaleY(-1); }
-.corner--br { bottom: 14px; right: 14px; border-left: 0; border-top: 0; transform: scale(-1); }
-
 /* ===== Cream menu sheet ===== */
 .sheet {
   position: relative;
@@ -122,69 +86,132 @@ a {
   max-width: calc(100vw - 28px);
   margin: 28px auto;
   background:
-    linear-gradient(180deg, var(--cream-bright) 0%, var(--cream) 100%);
+    linear-gradient(180deg, #fffaf3 0%, var(--cream) 100%);
   border: 3px solid var(--ink);
   border-radius: 28px;
-  box-shadow: 0 18px 50px rgba(38, 33, 31, 0.28), var(--shadow-lg);
+  box-shadow:
+    0 22px 55px rgba(40, 12, 8, 0.45),
+    0 6px 0 rgba(36, 31, 29, 0.25);
   overflow: hidden;
+}
+
+/* ===== Changsal / dancheong corner lattice (inside cream sheet) ===== */
+.changsal {
+  position: absolute;
+  z-index: 3;
+  width: 72px;
+  height: 72px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--crimson), var(--crimson)) top left / 100% 3px no-repeat,
+    linear-gradient(var(--crimson), var(--crimson)) top left / 3px 100% no-repeat,
+    linear-gradient(var(--crimson), var(--crimson)) top left / 42% 3px no-repeat,
+    linear-gradient(var(--crimson), var(--crimson)) top left / 3px 42% no-repeat,
+    linear-gradient(var(--gold), var(--gold)) top 10px left 10px / 18px 3px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) top 10px left 10px / 3px 18px no-repeat;
+  border: 0;
+}
+
+.changsal::before,
+.changsal::after {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--crimson);
+}
+
+.changsal::before {
+  inset: 16px 16px auto auto;
+  width: 22px;
+  height: 22px;
+  border-left: 0;
+  border-bottom: 0;
+  border-color: var(--gold);
+}
+
+.changsal::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 18px 0;
+  border-top: 0;
+  border-right: 0;
+  border-color: rgba(158, 36, 28, 0.55);
+  clip-path: polygon(0 0, 100% 0, 100% 8%, 8% 8%, 8% 100%, 0 100%);
+}
+
+.changsal--tl {
+  top: 0;
+  left: 0;
+}
+
+.changsal--tr {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* Extra lattice fill lines for a richer corner frame */
+.changsal--tl::before {
+  content: "";
+}
+
+/* ===== Chili decor on sheet ===== */
+.chili-decor {
+  position: absolute;
+  z-index: 3;
+  font-size: 1.65rem;
+  line-height: 1;
+  filter: drop-shadow(1px 2px 0 rgba(36, 31, 29, 0.35));
+  pointer-events: none;
+  user-select: none;
+}
+
+.chili-decor--ur {
+  top: 96px;
+  right: 22px;
+  transform: rotate(35deg);
+}
+
+.chili-decor--ll {
+  bottom: 120px;
+  left: 18px;
+  transform: rotate(-145deg);
 }
 
 /* ===== Top header bar ===== */
 .top-bar {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: center;
   justify-items: center;
   text-align: center;
-  padding: 1.5rem 1.25rem 1.25rem;
+  padding: 1.75rem 1.25rem 1.25rem;
   background:
-    linear-gradient(180deg, rgba(166, 38, 30, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(158, 36, 28, 0.06), transparent 70%),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 18px,
-      rgba(38, 33, 31, 0.04) 18px,
-      rgba(38, 33, 31, 0.04) 19px
+      rgba(36, 31, 29, 0.035) 18px,
+      rgba(36, 31, 29, 0.035) 19px
     );
   border-bottom: 3px solid var(--ink);
   position: relative;
 }
 
-.top-bar::before,
-.top-bar::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  width: 42px;
-  height: 42px;
-  border: 2.5px solid rgba(38, 33, 31, 0.35);
-  pointer-events: none;
-}
-
-.top-bar::before {
-  left: 14px;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.top-bar::after {
-  right: 14px;
-  border-left: 0;
-  border-bottom: 0;
-  transform: scaleX(-1);
-}
-
 .tagline {
   font-family: var(--font-display);
-  font-size: clamp(0.72rem, 2.4vw, 0.92rem);
-  letter-spacing: 0.05em;
-  color: var(--crimson);
+  font-size: clamp(0.78rem, 2.4vw, 0.98rem);
+  letter-spacing: 0.06em;
+  color: var(--ink);
   line-height: 1.4;
   max-width: 100%;
   overflow-wrap: normal;
   word-break: keep-all;
   hyphens: none;
+  font-weight: 900;
 }
 
 .top-bar__side {
@@ -197,22 +224,27 @@ a {
   max-width: 100%;
 }
 
-.top-bar__logo img {
-  width: min(260px, 72vw);
+/* Circular emblem — no rectangular white card/box */
+.logo-emblem {
+  width: min(220px, 68vw);
   height: auto;
-  margin: 0 auto;
-  border-radius: 18px;
-  border: 3px solid var(--ink);
-  box-shadow: var(--shadow);
-  background: var(--cream-bright);
+  aspect-ratio: 1;
   object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 4px solid var(--crimson);
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  margin: 0 auto;
+  background: var(--cream);
+  box-shadow: 0 6px 18px rgba(36, 31, 29, 0.18);
 }
 
 .brand {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 5vw, 2.6rem);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   line-height: 1.1;
-  margin-top: 0.65rem;
+  margin-top: 0.75rem;
   color: var(--ink);
   letter-spacing: 0.01em;
 }
@@ -240,7 +272,7 @@ a {
 
 .section-hangul {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 900;
   color: var(--crimson);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   letter-spacing: 0.18em;
@@ -249,7 +281,7 @@ a {
 .chili {
   font-size: clamp(1.25rem, 3vw, 1.6rem);
   line-height: 1;
-  filter: drop-shadow(1px 1px 0 rgba(38, 33, 31, 0.35));
+  filter: drop-shadow(1px 1px 0 rgba(36, 31, 29, 0.35));
 }
 
 .chili--flip {
@@ -265,7 +297,7 @@ a {
 }
 
 .menu-card {
-  background: var(--cream-bright);
+  background: var(--cream-card);
   border: 3px solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -293,8 +325,8 @@ a {
   height: clamp(140px, 40vw, 180px);
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--ink);
-  box-shadow: 0 0 0 5px var(--crimson), var(--shadow);
+  border: 4px solid var(--crimson);
+  box-shadow: 0 0 0 3px var(--ink), var(--shadow);
   background: var(--egg);
 }
 
@@ -309,7 +341,7 @@ a {
   font-family: var(--font-display);
   font-size: 0.85rem;
   letter-spacing: 0.06em;
-  color: var(--cream-bright);
+  color: #fffaf3;
   background: var(--crimson);
   border: 2.5px solid var(--ink);
   border-radius: 999px;
@@ -323,6 +355,7 @@ a {
   flex-direction: column;
   gap: 0.55rem;
   flex: 1;
+  min-width: 0;
 }
 
 .menu-card__title-row {
@@ -347,7 +380,7 @@ a {
 .menu-card__title .hangul {
   display: block;
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 900;
   font-size: 0.72em;
   color: var(--ink-muted);
   letter-spacing: 0.04em;
@@ -357,7 +390,7 @@ a {
 .price-pill {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 3vw, 1.4rem);
-  color: var(--cream-bright);
+  color: #fffaf3;
   background: var(--crimson);
   border: 2.5px solid var(--ink);
   border-radius: 999px;
@@ -370,6 +403,18 @@ a {
 .price-pill--sm {
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   padding: 0.28rem 0.8rem;
+}
+
+.price-note {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.price-note strong {
+  color: var(--crimson);
+  font-family: var(--font-display);
+  font-weight: 900;
 }
 
 .menu-card__desc {
@@ -413,7 +458,7 @@ a {
   border-radius: 50%;
   object-fit: cover;
   border: 2.5px solid var(--ink);
-  background: var(--cream-bright);
+  background: var(--cream-card);
 }
 
 .topping__meta {
@@ -452,7 +497,7 @@ a {
   gap: 0.85rem;
   flex-wrap: wrap;
   text-align: center;
-  background: var(--cream-bright);
+  background: var(--cream-card);
   border: 3px solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -465,13 +510,19 @@ a {
   content: "🌶️";
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   font-size: 1.35rem;
   opacity: 0.95;
 }
 
-.callout::before { left: 0.65rem; transform: translateY(-50%) rotate(-25deg); }
-.callout::after { right: 0.65rem; transform: translateY(-50%) scaleX(-1) rotate(-25deg); }
+.callout::before {
+  left: 0.65rem;
+  transform: translateY(-50%) rotate(-25deg);
+}
+
+.callout::after {
+  right: 0.65rem;
+  transform: translateY(-50%) scaleX(-1) rotate(-25deg);
+}
 
 .callout__mark {
   font-family: var(--font-display);
@@ -493,7 +544,7 @@ a {
 /* ===== Order builder ===== */
 .order {
   margin: 1.5rem 1.25rem;
-  background: var(--cream-bright);
+  background: var(--cream-card);
   border: 3px solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -574,7 +625,7 @@ a {
 
 .chip--dish.is-active {
   background: var(--crimson);
-  color: var(--cream-bright);
+  color: #fffaf3;
 }
 
 .chip--extra {
@@ -635,7 +686,7 @@ a {
   text-align: center;
   border: 2.5px solid var(--ink);
   border-radius: 10px;
-  background: var(--cream-bright);
+  background: #fffaf3;
   font-family: var(--font-display);
   font-size: 1.1rem;
 }
@@ -666,7 +717,7 @@ a {
 .order__total {
   margin-top: 0.65rem;
   padding-top: 0.55rem;
-  border-top: 2px solid rgba(38, 33, 31, 0.2);
+  border-top: 2px solid rgba(36, 31, 29, 0.2);
   font-family: var(--font-display);
   font-size: 1.2rem;
   display: flex;
@@ -752,7 +803,7 @@ a {
 .footer {
   border-top: 3px solid var(--ink);
   background:
-    linear-gradient(180deg, rgba(166, 38, 30, 0.06), transparent),
+    linear-gradient(180deg, rgba(158, 36, 28, 0.06), transparent),
     var(--cream);
   padding: 1.35rem 1.25rem 1.5rem;
 }
@@ -770,7 +821,7 @@ a {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  background: var(--cream-bright);
+  background: var(--cream-card);
   border: 2.5px solid var(--ink);
   border-radius: var(--radius-sm);
   padding: 0.75rem 0.9rem;
@@ -897,6 +948,23 @@ a {
     grid-template-columns: 1.4fr 1fr auto;
     align-items: start;
   }
+
+  .changsal {
+    width: 88px;
+    height: 88px;
+  }
+
+  .chili-decor--ur {
+    top: 110px;
+    right: 36px;
+    font-size: 1.85rem;
+  }
+
+  .chili-decor--ll {
+    bottom: 140px;
+    left: 30px;
+    font-size: 1.85rem;
+  }
 }
 
 @media (max-width: 420px) {
@@ -909,6 +977,11 @@ a {
     width: calc(100% - 16px);
     margin: 12px auto;
     border-radius: 20px;
+  }
+
+  .chili-decor--ur,
+  .chili-decor--ll {
+    display: none;
   }
 }
 
